@@ -7,7 +7,7 @@ services:
       dockerfile: ./build/Dockerfile
     restart: always
     ports:
-      - "8080:8080"
+      - "8090:8080"
     depends_on:
       - db
     links:
@@ -24,7 +24,7 @@ services:
       DB_PASS: odinson
     volumes:
       - ./etc:/etc/thunderdome
-  db: 
+  db:
     image: postgres:13.2
     restart: always
     environment:
@@ -47,7 +47,8 @@ services:
       - asgard
 
 networks:
- asgard:
+  asgard:
+
 
 volumes:
   thunderdome_data:
